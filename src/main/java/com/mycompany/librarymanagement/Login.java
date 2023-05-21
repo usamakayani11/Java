@@ -1,9 +1,12 @@
 
 package com.mycompany.librarymanagement;
 
+import java.awt.List;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 public class Login extends javax.swing.JFrame {
+    User user = new User();
 
     /**
      * Creates new form Login
@@ -51,10 +54,19 @@ public class Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void LoginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginBtnActionPerformed
-         JFrame BookManagement = new BookManagement();
-                BookManagement.setVisible(true);
-                setVisible(false);
+            String username = usernameField.getText();
+            String password = new String(passwordField.getPassword());
+
+                if (user.validateLogin(username, password)) {
+                    JOptionPane.showMessageDialog(Login.this, "Login successful!");
+                    JFrame BookManagement = new BookManagement();
+                    BookManagement.setVisible(true);
+                    setVisible(false);
                 dispose();
+                } else {
+                    JOptionPane.showMessageDialog(Login.this, "Invalid username or password!");
+                }
+        
     }//GEN-LAST:event_LoginBtnActionPerformed
 
     /**
