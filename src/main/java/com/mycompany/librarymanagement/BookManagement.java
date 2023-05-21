@@ -1,6 +1,4 @@
-
 package com.mycompany.librarymanagement;
-
 import javax.swing.JFrame;
 
 public class BookManagement extends javax.swing.JFrame {

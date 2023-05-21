@@ -11,8 +11,6 @@ LibraryController libCon = new LibraryController();
     public IssueBooks() {
         initComponents();
     }
-    
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

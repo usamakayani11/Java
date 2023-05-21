@@ -6,6 +6,7 @@ public class LibraryController {
     private DbHandler data;
     private int mCurrentIndex;
     
+    
     public void addbook(String bName, int bId, int bCopies, String bGenre){
 //        data.addbook(new Book(bName, bId, bCopies, bGenre));
             JOptionPane.showMessageDialog(null, bName + bId);

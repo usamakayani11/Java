@@ -7,10 +7,6 @@ import javax.swing.JOptionPane;
 
 public class Login extends javax.swing.JFrame {
     User user = new User();
-
-    /**
-     * Creates new form Login
-     */
     public Login() {
         initComponents();
     }
@@ -56,16 +52,20 @@ public class Login extends javax.swing.JFrame {
     private void LoginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginBtnActionPerformed
             String username = usernameField.getText();
             String password = new String(passwordField.getPassword());
-
-                if (user.validateLogin(username, password)) {
-                    JOptionPane.showMessageDialog(Login.this, "Login successful!");
-                    JFrame BookManagement = new BookManagement();
-                    BookManagement.setVisible(true);
-                    setVisible(false);
-                dispose();
-                } else {
-                    JOptionPane.showMessageDialog(Login.this, "Invalid username or password!");
-                }
+            
+            JFrame BookManagement = new BookManagement();
+            BookManagement.setVisible(true);
+            setVisible(false);
+            
+//                if (user.validateLogin(username, password)) {
+//                    JOptionPane.showMessageDialog(Login.this, "Login successful!");
+//                    JFrame BookManagement = new BookManagement();
+//                    BookManagement.setVisible(true);
+//                    setVisible(false);
+//                dispose();
+//                } else {
+//                    JOptionPane.showMessageDialog(Login.this, "Invalid username or password!");
+//                }
         
     }//GEN-LAST:event_LoginBtnActionPerformed
 

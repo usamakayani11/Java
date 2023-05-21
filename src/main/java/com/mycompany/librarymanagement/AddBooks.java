@@ -15,7 +15,6 @@ public class AddBooks extends javax.swing.JFrame {
     public AddBooks() {
         initComponents();
     }
-
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents

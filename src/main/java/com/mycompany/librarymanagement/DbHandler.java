@@ -9,5 +9,7 @@ package com.mycompany.librarymanagement;
  * @author hithi
  */
 public class DbHandler {
-    
+    DbHandler(){
+        
+    }
 }
