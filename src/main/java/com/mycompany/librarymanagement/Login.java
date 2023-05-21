@@ -24,18 +24,19 @@ public class Login extends javax.swing.JFrame {
         LoginBtn = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(400, 300));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Login");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(178, 17, 37, -1));
-        getContentPane().add(usernameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 84, 270, 46));
-        getContentPane().add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 165, 270, 46));
+        getContentPane().add(usernameField, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 270, 40));
+        getContentPane().add(passwordField, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 150, 270, 40));
 
         jLabel2.setText("Username: ");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 62, -1, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, -1, -1));
 
         jLabel3.setText("Password:");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(66, 143, 63, -1));
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 63, -1));
 
         LoginBtn.setText("Login");
         LoginBtn.addActionListener(new java.awt.event.ActionListener() {
@@ -43,9 +44,10 @@ public class Login extends javax.swing.JFrame {
                 LoginBtnActionPerformed(evt);
             }
         });
-        getContentPane().add(LoginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(156, 240, 75, -1));
+        getContentPane().add(LoginBtn, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 220, 75, -1));
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void LoginBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginBtnActionPerformed

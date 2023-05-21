@@ -15,7 +15,6 @@ public class BookManagement extends javax.swing.JFrame {
 
         jLabel1 = new javax.swing.JLabel();
         isssueBook = new javax.swing.JButton();
-        addBook = new javax.swing.JButton();
         showBook = new javax.swing.JButton();
         updateBook = new javax.swing.JButton();
         backBtn1 = new javax.swing.JButton();
@@ -23,6 +22,7 @@ public class BookManagement extends javax.swing.JFrame {
         returnBook = new javax.swing.JButton();
         showUser = new javax.swing.JButton();
         showIssue = new javax.swing.JButton();
+        addbook = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -32,13 +32,6 @@ public class BookManagement extends javax.swing.JFrame {
         isssueBook.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 isssueBookActionPerformed(evt);
-            }
-        });
-
-        addBook.setText("Add Book");
-        addBook.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addBookActionPerformed(evt);
             }
         });
 
@@ -86,6 +79,13 @@ public class BookManagement extends javax.swing.JFrame {
             }
         });
 
+        addbook.setText("Add Book");
+        addbook.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addbookActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -95,25 +95,24 @@ public class BookManagement extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(36, 36, 36)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(addBook, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(addUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(isssueBook, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(showUser, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE))
+                            .addComponent(showUser, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
+                            .addComponent(addbook, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(76, 76, 76)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(updateBook, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(showBook, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(returnBook, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(showIssue, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 20, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(backBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(134, 134, 134)
-                .addComponent(jLabel1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(showIssue, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(134, 134, 134)
+                        .addComponent(jLabel1)))
+                .addContainerGap(26, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(backBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(144, 144, 144))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -121,9 +120,9 @@ public class BookManagement extends javax.swing.JFrame {
                 .addGap(24, 24, 24)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(showBook, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(addBook, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(showBook, javax.swing.GroupLayout.DEFAULT_SIZE, 36, Short.MAX_VALUE)
+                    .addComponent(addbook, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(updateBook, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -136,34 +135,31 @@ public class BookManagement extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(showIssue, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(showUser, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 15, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(backBtn1)
-                .addContainerGap())
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void addBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBookActionPerformed
-                 JFrame AddBook = new AddBook();
-                AddBook.setVisible(true);
-                setVisible(false);
-                dispose();
-    }//GEN-LAST:event_addBookActionPerformed
-
     private void addUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addUserActionPerformed
-                JFrame AddUser = new AddUser();
+        JFrame AddUser = new AddUser();
                 AddUser.setVisible(true);
                 setVisible(false);
                 dispose();
     }//GEN-LAST:event_addUserActionPerformed
 
     private void isssueBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_isssueBookActionPerformed
-        // TODO add your handling code here:
+        JFrame IssueBooks = new IssueBooks();
+                IssueBooks.setVisible(true);
+                setVisible(false);
+                dispose();
     }//GEN-LAST:event_isssueBookActionPerformed
 
     private void showUserActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showUserActionPerformed
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_showUserActionPerformed
 
     private void showBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showBookActionPerformed
@@ -171,16 +167,29 @@ public class BookManagement extends javax.swing.JFrame {
     }//GEN-LAST:event_showBookActionPerformed
 
     private void updateBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_updateBookActionPerformed
-        // TODO add your handling code here:
+        JFrame UpdateBook = new UpdateBook();
+                UpdateBook.setVisible(true);
+                setVisible(false);
+                dispose();
     }//GEN-LAST:event_updateBookActionPerformed
 
     private void returnBookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_returnBookActionPerformed
-        // TODO add your handling code here:
+        JFrame ReturnBooks = new ReturnBooks();
+                ReturnBooks.setVisible(true);
+                setVisible(false);
+                dispose();
     }//GEN-LAST:event_returnBookActionPerformed
 
     private void showIssueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_showIssueActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_showIssueActionPerformed
+
+    private void addbookActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addbookActionPerformed
+        JFrame AddBooks = new AddBooks();
+                AddBooks.setVisible(true);
+                setVisible(false);
+                dispose();
+    }//GEN-LAST:event_addbookActionPerformed
 
     public static void main(String args[]) {
 
@@ -192,8 +201,8 @@ public class BookManagement extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addBook;
     private javax.swing.JButton addUser;
+    private javax.swing.JButton addbook;
     private javax.swing.JButton backBtn1;
     private javax.swing.JButton isssueBook;
     private javax.swing.JLabel jLabel1;

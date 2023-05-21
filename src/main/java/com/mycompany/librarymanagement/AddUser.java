@@ -4,12 +4,14 @@
  */
 package com.mycompany.librarymanagement;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author 5hayzi
  */
 public class AddUser extends javax.swing.JFrame {
-
+ LibraryController libCon = new LibraryController();
     /**
      * Creates new form AddBook
      */
@@ -32,15 +34,16 @@ public class AddUser extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
-        addBookBtn = new javax.swing.JButton();
+        addUserBtn = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         backBtn = new javax.swing.JButton();
         userPass = new javax.swing.JPasswordField();
         confirmUserPass = new javax.swing.JPasswordField();
         jLabel6 = new javax.swing.JLabel();
-        gender = new javax.swing.JComboBox<>();
+        genderBox = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setLocationByPlatform(true);
 
         jLabel1.setText("User Name:");
 
@@ -50,18 +53,28 @@ public class AddUser extends javax.swing.JFrame {
 
         jLabel4.setText("Gender");
 
-        addBookBtn.setText("Add Book");
+        addUserBtn.setText("Add User");
+        addUserBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addUserBtnActionPerformed(evt);
+            }
+        });
 
         jLabel5.setText("User Add Form");
 
         backBtn.setText("<<BACK");
+        backBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backBtnActionPerformed(evt);
+            }
+        });
 
         jLabel6.setText("Confirm Password: ");
 
-        gender.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "   ", "Male", "Female" }));
-        gender.addActionListener(new java.awt.event.ActionListener() {
+        genderBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "   ", "Male", "Female" }));
+        genderBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                genderActionPerformed(evt);
+                genderBoxActionPerformed(evt);
             }
         });
 
@@ -71,10 +84,10 @@ public class AddUser extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(addBookBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(67, 67, 67)
-                .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(addUserBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(backBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50))
             .addGroup(layout.createSequentialGroup()
                 .addGap(159, 159, 159)
                 .addComponent(jLabel5)
@@ -103,7 +116,7 @@ public class AddUser extends javax.swing.JFrame {
                         .addGap(5, 5, 5)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(gender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(genderBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addComponent(confirmUserPass))))
                 .addGap(15, 15, 15))
@@ -132,23 +145,38 @@ public class AddUser extends javax.swing.JFrame {
                 .addGap(17, 17, 17)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
-                    .addComponent(gender, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(genderBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(addBookBtn)
-                        .addGap(21, 21, 21))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(backBtn)
-                        .addContainerGap())))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(addUserBtn)
+                    .addComponent(backBtn))
+                .addGap(21, 21, 21))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void genderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genderActionPerformed
+    private void genderBoxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_genderBoxActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_genderActionPerformed
+    }//GEN-LAST:event_genderBoxActionPerformed
+
+    private void backBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backBtnActionPerformed
+        JFrame BookManagement = new BookManagement();
+                BookManagement.setVisible(true);
+                setVisible(false);
+                dispose();
+    }//GEN-LAST:event_backBtnActionPerformed
+
+    private void addUserBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addUserBtnActionPerformed
+        String uName = userNameField.getText();
+        String uPass = userPass.getText();
+        String confirmPass = confirmUserPass.getText();
+        String userID = userIdField.getText();
+        String gender = genderBox.getItemAt(WIDTH);
+        
+        libCon.addUser(uName, userID, uPass, confirmPass, gender );
+    }//GEN-LAST:event_addUserBtnActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,10 +217,10 @@ public class AddUser extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton addBookBtn;
+    private javax.swing.JButton addUserBtn;
     private javax.swing.JButton backBtn;
     private javax.swing.JPasswordField confirmUserPass;
-    private javax.swing.JComboBox<String> gender;
+    private javax.swing.JComboBox<String> genderBox;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
